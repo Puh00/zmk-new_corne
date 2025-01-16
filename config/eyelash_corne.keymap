@@ -24,8 +24,6 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
-&mt { tapping-term-ms = <150>; };
-
 / {
     behaviors {
         td0: td0 {
@@ -76,7 +74,7 @@
             display-name = "QWERTY";
             bindings = <
 &kp TAB    &kp Q  &kp W       &kp E         &kp R         &kp T                                &kp C_FF              &kp Y       &kp U         &kp I         &kp O       &kp P     &kp BSPC
-&kp CAPS   &kp A  &mt LALT S  &mt LCTRL D   &mt LSHIFT F  &kp G                    &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp H       &mt RSHIFT J  &mt RCTRL K   &mt RALT L  &kp SEMI  &kp SQT
+&td0       &kp A  &mt LALT S  &mt LCTRL D   &mt LSHIFT F  &kp G                    &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp H       &mt RSHIFT J  &mt RCTRL K   &mt RALT L  &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z  &kp X       &kp C         &kp V         &kp B      &kp C_MUTE                &kp C_RW              &kp N       &kp M         &kp COMMA     &kp DOT     &kp FSLH  &lt 6 ESC
                               &lt 7 ESCAPE  &lt 1 RET     &lt 4 TAB                                                  &lt 2 BSPC  &lt 5 SPACE   &lt 3 DELETE
             >;
@@ -88,7 +86,7 @@
             display-name = "NAV";
             bindings = <
 &trans  &trans    &trans        &trans     &trans          &trans                    &trans          &kp LC(Y)   &kp LC(V)  &kp LC(C)      &kp LC(X)  &kp LC(Z)  &trans
-&trans  &kp LCMD  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans            &trans  &trans  &trans  &kp LEFT    &kp DOWN   &kp UP         &kp RIGHT  &kp CAPS   &trans
+&trans  &kp LCMD  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans            &trans  &trans  &trans  &kp LEFT    &kp DOWN   &kp UP         &kp RIGHT  &none      &trans
 &trans  &trans    &trans        &trans     &trans          &trans  &trans            &trans          &kp INSERT  &kp HOME   &kp PAGE_DOWN  &kp PG_UP  &kp END    &trans
                                 &trans     &trans          &trans                                    &trans      &trans     &trans
             >;
