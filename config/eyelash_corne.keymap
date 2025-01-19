@@ -75,6 +75,32 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&caps_word>;
         };
+
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 44 45 46 47>;
+        };
+
+        hml: hml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <7 8 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 9 44 43 42>;
+            hold-trigger-on-release;
+        };
     };
 
     rgb_encoder: rgb_encoder {
@@ -112,10 +138,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q               &kp W           &kp E                &kp R         &kp T                                &kp C_FF              &kp Y       &kp U         &kp I             &kp O           &kp P              &none
-&mo 7      &hm_gui LEFT_GUI A  &hm_alt LALT S  &hm_ctrl LCTRL D     &mt LSHIFT F  &kp G                    &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp H       &mt RSHIFT J  &hm_ctrl RCTRL K  &hm_alt RALT L  &hm_gui RGUI SEMI  &kp SQT
-&kp LCTRL  &kp Z               &kp X           &kp C                &kp V         &kp B      &kp C_MUTE                &kp C_RW              &kp N       &kp M         &kp COMMA         &kp DOT         &kp FSLH           &lt 6 ESC
-                                               &td_shift_caps_word  &lt 1 RET     &lt 4 TAB                                                  &lt 2 BSPC  &lt 5 SPACE   &lt 3 DELETE
+&kp TAB    &kp Q            &kp W        &kp E                &kp R          &kp T                                &kp C_FF              &kp Y       &kp U          &kp I         &kp O        &kp P           &none
+&mo 7      &hml LEFT_GUI A  &hml LALT S  &hml LCTRL D         &hml LSHIFT F  &kp G                    &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp H       &hmr RSHIFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
+&kp LCTRL  &kp Z            &kp X        &kp C                &kp V          &kp B      &kp C_MUTE                &kp C_RW              &kp N       &kp M          &kp COMMA     &kp DOT      &kp FSLH        &lt 6 ESC
+                                         &td_shift_caps_word  &lt 1 RET      &lt 4 TAB                                                  &lt 2 BSPC  &lt 5 SPACE    &lt 3 DELETE
             >;
 
             sensor-bindings = <&volume_encoder>;
@@ -183,7 +209,7 @@
 
         System {
             bindings = <
-&sys_reset      &out OUT_TOG  &none       &rgb_ug RGB_TOG                   &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                    &trans          &none   &none   &none   &none  &none  &kp LG(L)
+&sys_reset      &out OUT_TOG  &none       &rgb_ug RGB_TOG                   &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                    &trans          &none   &none   &none   &none  &none  &soft_off
 &sys_reset      &none         &none       &rgb_ug RGB_COLOR_HSB(47,82,33)   &rgb_ug RGB_SPD  &rgb_ug RGB_SPI            &trans  &trans  &trans  &none   &none   &none   &none  &none  &none
 &bt BT_CLR_ALL  &bt BT_PRV    &bt BT_NXT  &rgb_ug RGB_COLOR_HSB(223,70,51)  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans            &trans          &none   &none   &none   &none  &none  &trans
                                           &trans                            &trans           &trans                                             &trans  &trans  &trans
