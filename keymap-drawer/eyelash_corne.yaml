@@ -58,7 +58,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - Ctl+Y
   - Ctl+C
-  - Ins
+  - Sft+INS
   - Ctl+X
   - Ctl+Z
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -205,7 +205,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - Ctl+Y
   - Ctl+C
-  - INS
+  - Sft+INS
   - Ctl+X
   - Ctl+Z
   - {t: '$$mdi:minus-circle-outline$$', type: none}
